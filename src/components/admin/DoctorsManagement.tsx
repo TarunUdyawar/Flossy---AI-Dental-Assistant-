@@ -22,7 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { Gender } from "@prisma/client";
+import { Doctor, Gender } from "@prisma/client";
 import { useCreateDoctor, useGetDoctors, useUpdateDoctor } from "../../hooks/use-doctors";
 
 const DoctorsManagement = () => {
@@ -30,7 +30,8 @@ const DoctorsManagement = () => {
   
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
+ const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
+
   
   const createDoctorMutation = useCreateDoctor();
   const updateDoctorMutation = useUpdateDoctor();
