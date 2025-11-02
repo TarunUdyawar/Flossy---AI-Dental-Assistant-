@@ -22,16 +22,7 @@ const FlossyDashboard = async () => {
   // Get the next appointment (earliest upcoming one)
   const nextAppointment = upcomingAppointments[0];
 
-  // Prepare appointment data for display
- interface NextAppointmentData {
-  doctorName: string;
-  service: string;
-  date: string;
-  day: string;
-  time: string;
-  status: string;
-  upcomingCount: number;
-}
+
 
 // Define the structure for nextAppointmentData
 type NextAppointmentData = {
