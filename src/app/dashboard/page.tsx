@@ -23,23 +23,46 @@ const FlossyDashboard = async () => {
   const nextAppointment = upcomingAppointments[0];
 
   // Prepare appointment data for display
-  let nextAppointmentData = null;
-  if (nextAppointment) {
-    const appointmentDate = parseISO(nextAppointment.date);
-    const formattedDate = format(appointmentDate, "EEEE, MMMM d, yyyy");
-    const dayOfWeek = format(appointmentDate, "EEEE");
-    const isToday = isSameDay(appointmentDate, new Date());
+ interface NextAppointmentData {
+  doctorName: string;
+  service: string;
+  date: string;
+  day: string;
+  time: string;
+  status: string;
+  upcomingCount: number;
+}
 
-    nextAppointmentData = {
-      doctorName: nextAppointment.doctorName,
-      service: nextAppointment.service || "General Checkup",
-      date: formattedDate,
-      day: isToday ? "Today" : dayOfWeek,
-      time: nextAppointment.time,
-      status: nextAppointment.status,
-      upcomingCount: upcomingAppointments.length - 1
-    };
-  }
+// Define the structure for nextAppointmentData
+type NextAppointmentData = {
+  doctorName: string;
+  service: string;
+  date: string;
+  day: string;
+  time: string;
+  status: string;
+  upcomingCount: number;
+};
+
+// Initialize variable with explicit type
+let nextAppointmentData: NextAppointmentData | null = null;
+
+if (nextAppointment) {
+  const appointmentDate = parseISO(nextAppointment.date);
+  const formattedDate = format(appointmentDate, "EEEE, MMMM d, yyyy");
+  const dayOfWeek = format(appointmentDate, "EEEE");
+  const isToday = isSameDay(appointmentDate, new Date());
+
+  nextAppointmentData = {
+    doctorName: nextAppointment.doctorName,
+    service: nextAppointment.service || "General Checkup",
+    date: formattedDate,
+    day: isToday ? "Today" : dayOfWeek,
+    time: nextAppointment.time,
+    status: nextAppointment.status,
+    upcomingCount: upcomingAppointments.length - 1,
+  };
+}
 
   // Get member since date
   const memberSince = user?.createdAt ? format(new Date(user.createdAt), "MMM yyyy") : "N/A";
