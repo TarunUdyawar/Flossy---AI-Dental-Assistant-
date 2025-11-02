@@ -173,28 +173,7 @@ const FlossyHomePage = () => {
                 </button>
               </div>
 
-              {/* Social Proof */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <div 
-                      key={i}
-                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#18cef2] to-[#1089bd] border-2 border-[#0a0c14] flex items-center justify-center text-xs font-bold"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
-                <div className="sm:border-l border-[rgba(24,206,242,0.2)] sm:pl-4">
-                  <div className="flex items-center justify-center space-x-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} size={14} className="sm:w-4 sm:h-4" fill="#f97316" stroke="#f97316" />
-                    ))}
-                    <span className="ml-2 font-bold text-white text-sm sm:text-base">4.9/5</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-gray-400 text-center">Trusted by <span className="text-white font-medium">1,200+</span> patients</p>
-                </div>
-              </div>
+            
             </div>
 
             {/* Right Content - Robot Character */}
@@ -208,7 +187,7 @@ const FlossyHomePage = () => {
                   <img 
                     src="flossy.png"
                     alt="Flossy Dental Robot" 
-                    className="w-full mx-auto drop-shadow-2xl"
+                    className="mx-auto drop-shadow-2xl h-70x md:h-160"
                   />
                 </div>
 
