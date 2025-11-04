@@ -78,7 +78,7 @@ const AIConversationsSection = () => {
                 <div
                   key={item.id}
                   className="relative group bg-[#111827] border border-[rgba(24,206,242,0.2)] rounded-xl p-6 hover:border-[#18cef2] transition-all hover:shadow-lg hover:shadow-[#18cef2]/20 cursor-pointer"
-                  onMouseEnter={() => setHoveredCard(item.id)}
+        
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   {/* Question Icon */}
