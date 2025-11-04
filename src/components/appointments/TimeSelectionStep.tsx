@@ -153,7 +153,7 @@ function TimeSelectionStep({
                 onClick={() => onTypeChange(type.id)}
               >
                 <CardContent className="p-4 space-y-2">
-                  <div className="text-2xl sm:text-3xl">{type.icon}</div>
+ 
                   <h4 className="font-semibold text-sm sm:text-base text-white">{type.name}</h4>
                   <p className="text-xs sm:text-sm text-gray-400">{type.duration}</p>
                   <p className="text-base sm:text-lg font-bold text-purple-400">{type.price}</p>
