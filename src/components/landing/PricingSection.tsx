@@ -105,7 +105,7 @@ const PricingSection = () => {
               className={`relative group ${
                 plan.popular ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
-              onMouseEnter={() => setHoveredPlan(plan.id)}
+        
               onMouseLeave={() => setHoveredPlan(null)}
             >
               {/* Badge */}
