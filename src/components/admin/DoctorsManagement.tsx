@@ -22,13 +22,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { Doctor, Gender } from "@prisma/client";type Doctor = {
+type Doctor = {
   id: string;
   name: string;
   gender: string;
   specialization: string;
-  isActive: boolean;
-};
+  experience: number;
+  phone: string;
+  email: string;
+  available: boolean;
+}
 
 type Gender = "MALE" | "FEMALE" | "OTHER";
 import { useCreateDoctor, useGetDoctors, useUpdateDoctor } from "../../hooks/use-doctors";
