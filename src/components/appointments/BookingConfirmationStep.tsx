@@ -63,7 +63,7 @@ function BookingConfirmationStep({
             <div className="bg-gradient-to-br from-purple-500/10 to-pink-600/5 border border-purple-500/20 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
                 <div className="p-2 bg-purple-500/20 rounded-lg">
-                  <span className="text-lg">{appointmentType?.icon}</span>
+                 
                 </div>
                 <p className="text-xs sm:text-sm text-gray-400">Appointment Type</p>
               </div>
