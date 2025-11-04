@@ -1,27 +1,32 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { Gender } from "@prisma/client"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-export function generateAvatar(name: string, gender: "MALE" | "FEMALE") {
+
+export function generateAvatar(name: string, gender: Gender) {
   const username = name.replace(/\s+/g, "").toLowerCase();
   const base = "https://avatar.iran.liara.run/public";
+  
   if (gender === "FEMALE") return `${base}/girl?username=${username}`;
-  // default to boy
-  return `${base}/boy?username=${username}`;
+  if (gender === "MALE") return `${base}/boy?username=${username}`;
+  // Handle OTHER gender with a neutral avatar
+  return `${base}?username=${username}`;
 }
+
 export const getNext5Days = () => {
   const dates = [];
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
-
+  
   for (let i = 0; i < 5; i++) {
     const date = new Date(tomorrow);
     date.setDate(date.getDate() + i);
     dates.push(date.toISOString().split("T")[0]);
   }
-
+  
   return dates;
 };
 
