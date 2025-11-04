@@ -17,7 +17,7 @@ export function generateAvatar(name: string, gender: Gender) {
 }
 
 export const getNext5Days = () => {
-  const dates = [];
+  const dates: string[] = [];
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
   
